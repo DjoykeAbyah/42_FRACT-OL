@@ -1,29 +1,29 @@
-# ignore all
-*
+# # ignore all
+# *
 
-# Unignore all dirs
-!*/
+# # Unignore all dirs
+# !*/
 
-# Unignore all with extensions
-!*.*
+# # Unignore all with extensions
+# !*.*
 
-# Object files
-*.o
-*.obj
+# # Object files
+# *.o
+# *.obj
 
-# libraries
-*.lib
-*.a
+# # libraries
+# *.lib
+# *.a
 
-# Executables
-*.exe
-*.out
+# # Executables
+# *.exe
+# *.out
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# # Debug files
+# *.dSYM/
+# *.su
+# *.idb
+# *.pdb
 
 # VScode
 *.vscode
@@ -31,6 +31,6 @@
 # DS_Store
 **/.DS_Store
 
-# Ignore `bin` dir
-bin/
-*/bin/*
+# # Ignore `bin` dir
+# bin/
+# */bin/*
