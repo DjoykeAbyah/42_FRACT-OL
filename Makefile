@@ -1,24 +1,17 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: djoyke <djoyke@student.codam.nl>             +#+                      #
-#                                                    +#+                       #
-#    Created: 2023/04/28 13:25:16 by djoyke        #+#    #+#                  #
-#    Updated: 2023/04/29 17:14:53 by djoyke        ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
-
 NAME	= fractol
-LIBFT	= ./libft/libft.a
-CC	= gcc
+LIBFT	= ./Libft/libft.a
+CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra -Wunreachable-code 
 LIBMLX	= ./MLX42
 HEADERS	= -I ./include -I $(LIBMLX)/include 
-LDFLAGS = -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
-LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(LDFLAGS)
-SRC	= main.c
+INCL	= -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
+LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
+SRC		= \
+		main.c \
+		utils.c \
+		atod.c \
+		julia.c \
+		mandelbrot.c \
 
 OBJ	= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
 
