@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   utils.c                                            :+:    :+:            */
+/*   navigate.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 18:09:05 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/03 21:01:48 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/05 22:36:45 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int32_t	ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
-{
-	return (r << 24 | g << 16 | b << 8 | a);
-}
 
 void	ft_hook(void *param)
 {
@@ -25,12 +20,52 @@ void	ft_hook(void *param)
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_UP))
-		data->image->instances[0].y -= 5;
+	{
+		data->arry[0] -= 0.1 / 5;
+		data->arry[1] -= 0.1 / 5;
+		mandelbrot(data);
+	}
 	if (mlx_is_key_down(data->mlx, MLX_KEY_DOWN))
-		data->image->instances[0].y += 5;
+	{
+		data->arry[0] += 0.1 / 5;
+		data->arry[1] += 0.1 / 5;
+		mandelbrot(data);
+	}
 	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT))
-		data->image->instances[0].x -= 5;
+	{
+		data->arrx[0] += 0.1 / 5;
+		data->arrx[1] += 0.1 / 5;
+		mandelbrot(data);
+	}
 	if (mlx_is_key_down(data->mlx, MLX_KEY_RIGHT))
-		data->image->instances[0].x += 5;
+	{
+		data->arrx[0] -= 0.1 / 5;
+		data->arrx[1] -= 0.1 / 5;
+		mandelbrot(data);
+	}
 }
 
+void	ft_scroll(double x, double y, void *param)
+{
+	t_fractol	*data;
+
+	data = param;
+	(void)x;
+	if (y > 0)//bigger
+	{
+		data->arrx[0] = data->arrx[0] * 0.5;
+		data->arrx[1] = data->arrx[1] * 0.5;
+		data->arry[0] = data->arry[0] * 0.5;
+		data->arry[1] = data->arry[1] * 0.5;
+		puts("Up!");
+	}
+	else if (y < 0)//smaller
+	{
+		data->arrx[0] = data->arrx[0] / 0.5;
+		data->arrx[1] = data->arrx[1] / 0.5;
+		data->arry[0] = data->arry[0] / 0.5;
+		data->arry[1] = data->arry[1] / 0.5;
+		puts("Down!");
+	}
+	mandelbrot(data);
+}

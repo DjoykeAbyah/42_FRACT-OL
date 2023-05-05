@@ -8,7 +8,7 @@ INCL	= -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
 SRC		= \
 		main.c \
-		utils.c \
+		navigate.c \
 		atod.c \
 		julia.c \
 		mandelbrot.c \
