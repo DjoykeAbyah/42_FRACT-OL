@@ -4,3 +4,6 @@
 [submodule "MLX42"]
 	path = MLX42
 	url = git@github.com:codam-coding-college/MLX42.git
+
+
+# if more recent version of LIBFT or any other submodule required do: git submodule update.
