@@ -6,7 +6,7 @@
 #    By: djoyke <djoyke@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
-#    Updated: 2023/05/20 16:39:49 by djoyke        ########   odam.nl          #
+#    Updated: 2023/05/20 16:49:20 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ INCL	= -framework Cocoa -framework OpenGL -framework IOKit -L "`brew --prefix gl
 else ifeq ($(shell uname -m),x86_64)
 INCL	= -framework Cocoa -framework OpenGL -framework IOKit -lglfw3
 endif
-# GLFW	= -L "`brew --prefix glfw`/lib/" -lglfw
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
 SRC		= \
 		main.c \

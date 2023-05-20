@@ -8,10 +8,13 @@
 # !*.*
 
 # Object files
+./obj
 # *.o
 # *.obj
 
 # # libraries
+./MLX42
+fractol
 # *.lib
 # *.a
 
