@@ -6,7 +6,7 @@
 #    By: djoyke <djoyke@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
-#    Updated: 2023/05/20 15:41:57 by djoyke        ########   odam.nl          #
+#    Updated: 2023/05/20 16:07:52 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,10 @@ CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra -Ofast -O3
 LIBMLX	= ./MLX42
 HEADERS	= -I ./include -I $(LIBMLX)/include 
-INCL	= -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
-#libmlx42.a -Iinclude -lglfw -L"/Users/$USER/.brew/opt/glfw/lib/"
+INCL	= -framework Cocoa -framework OpenGL -framework IOKit -lglfw
+GLFW	= -L "`brew --prefix glfw`/lib/" -lglfw
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
+LIBS	+= $(GLFW)
 SRC		= \
 		main.c \
 		navigate.c \
