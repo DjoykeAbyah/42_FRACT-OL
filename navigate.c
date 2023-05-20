@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/20 18:50:12 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:22:28 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:36:55 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_move(void *param)
 		mlx_close_window(data->mlx);
 	ft_travel(data);
 	ft_zoom(data);
-	ft_color(data);
 	if (mlx_is_mouse_down(data->mlx, MLX_MOUSE_BUTTON_RIGHT))
 	{
 		ft_mouse_pos(data);

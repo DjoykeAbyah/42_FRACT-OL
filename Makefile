@@ -6,7 +6,7 @@
 #    By: djoyke <djoyke@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
-#    Updated: 2023/05/20 17:14:21 by dreijans      ########   odam.nl          #
+#    Updated: 2023/05/20 19:51:18 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ $(LIBFT):
 $(OBJDIR)/%.o: %.c
 		@mkdir -p $(OBJDIR)
 		$(CC) $(CFLAGS) -c -o $@ $^ $(HEADERS)
+		
 $(OBJDIR)/%.o:
 		@mkdir -p $(OBJDIR)
 		$(CC) $(CFLAGS) -c -o $@ $^
