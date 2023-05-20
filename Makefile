@@ -1,3 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: djoyke <djoyke@student.codam.nl>             +#+                      #
+#                                                    +#+                       #
+#    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
+#    Updated: 2023/05/20 15:41:57 by djoyke        ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+
 NAME	= fractol
 LIBFT	= ./Libft/libft.a
 MLX42	= ./MLX42/build/libmlx42.a
@@ -6,6 +19,7 @@ CFLAGS	= -Wall -Werror -Wextra -Ofast -O3
 LIBMLX	= ./MLX42
 HEADERS	= -I ./include -I $(LIBMLX)/include 
 INCL	= -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
+#libmlx42.a -Iinclude -lglfw -L"/Users/$USER/.brew/opt/glfw/lib/"
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
 SRC		= \
 		main.c \

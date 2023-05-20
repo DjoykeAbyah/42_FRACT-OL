@@ -8,8 +8,8 @@
 # !*.*
 
 # Object files
-*.o
-*.obj
+# *.o
+# *.obj
 
 # # libraries
 # *.lib
@@ -20,16 +20,16 @@
 # *.out
 
 # Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# *.dSYM/
+# *.su
+# *.idb
+# *.pdb
 
 # VScode
-*.vscode
+# *.vscode
 
 # DS_Store
-**/.DS_Store
+# **/.DS_Store
 
 # # Ignore `bin` dir
 # bin/
