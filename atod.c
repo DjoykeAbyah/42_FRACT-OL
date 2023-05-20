@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 18:53:37 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/19 22:24:52 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/20 19:24:56 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_string_check(char **argv)
 
 	i = 2;
 	j = 0;
+	ft_minus_plus_check(argv);
 	while (argv[i] != NULL)
 	{
 		j = 0;
@@ -33,11 +34,34 @@ void	ft_string_check(char **argv)
 					j++;
 				if (argv[i][j] == '.' && !ft_isdigit(argv[i][j + 1]))
 				{
-					ft_putendl_fd("please input numbers", 1);
+					ft_putendl_fd("please input correct numbers", 1);
 					exit(EXIT_FAILURE);
 				}
 			}
 			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_minus_plus_check(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 2;
+	j = 0;
+	while (argv[i])
+	{
+		if (argv[i][j] == '-' && argv[i][j + 1] == '-')
+		{
+			ft_putendl_fd("please input correct number", 1);
+			exit(EXIT_FAILURE);
+		}
+		if (argv[i][j] == '+' && argv[i][j + 1] == '+')
+		{
+			ft_putendl_fd("please input correct number", 1);
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}

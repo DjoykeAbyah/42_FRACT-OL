@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/16 18:06:21 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 16:11:18 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/05/20 19:22:17 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,32 @@ void	check_input(int argc, char **argv, t_fractol *data)
 	}
 	else if (argc == 4)
 		arg_julia(argv, data);
+}
+
+void	ft_color(t_fractol *data)
+{
+	if (mlx_is_key_down(data->mlx, MLX_KEY_R))
+	{
+		//color is changed in more R hues
+		printf("R\n");
+		choose(data);
+	}
+	if (mlx_is_key_down(data->mlx, MLX_KEY_B))
+	{
+		// color is changed in more B hues
+		printf("B\n");
+		choose(data);
+	}
+	if (mlx_is_key_down(data->mlx, MLX_KEY_G))
+	{
+		// color is changed in more G hues
+		printf("G\n");
+		choose(data);
+	}
+	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
+	{
+		// color is changed in more or less opacity
+		printf("A\n");
+		choose(data);
+	}
 }
