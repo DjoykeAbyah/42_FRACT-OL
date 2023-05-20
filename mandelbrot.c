@@ -6,18 +6,13 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 14:23:44 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/05 21:59:25 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/17 12:07:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int32_t	ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
-{
-	return (r << 24 | g << 16 | b << 8 | a);
-}
-
-static double	get_mandelbrot(double x, double y)
+static double	get_mandelbrot(double x, double y, int max)
 {
 	double	x0;
 	double	y0;
@@ -27,9 +22,9 @@ static double	get_mandelbrot(double x, double y)
 	x0 = x;
 	y0 = y;
 	i = 0;
-	while (((x * x) + (y * y)) <= 4 && i < MAX)
+	while (((x * x) + (y * y)) <= 4 && i < max)
 	{
-		xtemp = (x * x) - (y * y) + x0; // wordt het groter of kleiner?
+		xtemp = (x * x) - (y * y) + x0;
 		y = 2 * (x * y) + y0;
 		x = xtemp;
 		i++;
@@ -37,6 +32,8 @@ static double	get_mandelbrot(double x, double y)
 	return (i);
 }
 
+//pos[X] = -2 + (x / WIDTH) * (2 - -2);
+//pos[Y] = 2 + (y / HEIGHT) * (-2 - 2);
 void	mandelbrot(t_fractol *data)
 {
 	double		x;
@@ -49,18 +46,15 @@ void	mandelbrot(t_fractol *data)
 	y = 0;
 	while (x < WIDTH)
 	{
-		//pos[X] = -2 + (x / WIDTH) * (2 - -2);
-		pos[X] = data->arrx[0] + (x / WIDTH) * (data->arrx[1] - data->arrx[0]);
+		pos[X] = data->x[0] + (x / WIDTH) * (data->x[1] - data->x[0]);
 		while (y < HEIGHT)
 		{
-			// pos[Y] = 2 + (y / HEIGHT) * (-2 - 2);
-			pos[Y] = data->arry[1] + (y / HEIGHT) * (data->arry[0] - data->arry[1]);
-			i = get_mandelbrot(pos[X], pos[Y]);
-			if (i == MAX)
+			pos[Y] = data->y[1] + (y / HEIGHT) * (data->y[0] - data->y[1]);
+			i = get_mandelbrot(pos[X], pos[Y], data->max);
+			if (i == data->max)
 				color = ft_pixel(0, 0, 0, 255);
 			else
 				color = ft_pixel(20 * i, 6 * i, 100 * i, 15 * i);
-				// color = ft_pixel(255, 0, 0, 255);
 			mlx_put_pixel(data->image, x, y, color);
 			y++;
 		}

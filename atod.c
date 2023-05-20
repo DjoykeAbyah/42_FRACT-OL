@@ -1,78 +1,74 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   atof.c                                             :+:    :+:            */
+/*   atod.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 18:53:37 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/03 15:36:38 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/19 22:24:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static double	ft_atof_first(char *str)
-{
-	long	i;
-	double	number;
 
+// stringinput checken op digits
+//kan deze beter bij utils staan en static?
+void	ft_string_check(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 2;
+	j = 0;
+	while (argv[i] != NULL)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (!ft_isdigit(argv[i][j]))
+			{
+				if ((argv[i][j] == '-' || argv[i][j] == '+'))
+					j++;
+				if (argv[i][j] == '.' && !ft_isdigit(argv[i][j + 1]))
+				{
+					ft_putendl_fd("please input numbers", 1);
+					exit(EXIT_FAILURE);
+				}
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+//nodig voor input parcing!
+double	ft_atod(const char *str)
+{
+	double	decimal;
+	double	number;
+	int		sign;
+	int		i;
+
+	number = 0.0;
+	decimal = 1.0;
+	sign = 1;
 	i = 0;
-	number = 0;
-	if (!str)
-		return (0);
-	if (str[i] == '-' && ft_isdigit(str[i + 1]))
+	if (str[i] == '+' || str[i] == '-')
 	{
-		number = -number;
-		i++;
+		if (str[i++] == '-')
+			sign = -1;
 	}
-	if (str[i] == '+' && ft_isdigit(str[i + 1]))
-		i++;
-	while ((str[i]) != '.')
+	while (ft_isdigit(str[i]))
+		number = number * 10 + (str[i++] - '0');
+	if (str[i++] == '.')
 	{
-		if (ft_isdigit(str[i]))
-			number = number + (str[i] - '0') * 10;
-		i++;
+		while (ft_isdigit(str[i]))
+		{
+			number = number * 10 + (str[i++] - '0');
+			decimal *= 10;
+		}
 	}
-	return (number);
+	return (sign * number / decimal);
 }
-
-static double	ft_atof_second(char *str)
-{
-	long	i;
-	double	number;
-	long	len;
-
-	i = 0;
-	number = 0;
-	len = ft_strlen(str);
-	while (str[len] != '.')
-	{
-		if (str[len] == '.' && !ft_isdigit(str[len - 1]))
-			return (0);
-		if (ft_isdigit(str[len]))
-			number = (number + (str[len] - '0')) / 10;
-		len--;
-	}
-	return (number);
-}
-
-double	ft_atod(char *str)
-{
-	double	number;
-
-	number = 0;
-	if (ft_atof_first(str) != 0 && ft_atof_second(str) != 0)
-		number = ft_atof_first(str) + ft_atof_second(str);
-	return (number);
-}
-
-// int	main(void)
-// {
-// 	char	*str;
-// 	float	number;
-
-// 	str = "30.15";
-// 	number = ft_atof(str);
-// 	printf("%f\n", number);
-// }

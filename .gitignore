@@ -7,9 +7,9 @@
 # # Unignore all with extensions
 # !*.*
 
-# # Object files
-# *.o
-# *.obj
+# Object files
+*.o
+*.obj
 
 # # libraries
 # *.lib
@@ -19,11 +19,11 @@
 # *.exe
 # *.out
 
-# # Debug files
-# *.dSYM/
-# *.su
-# *.idb
-# *.pdb
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
 
 # VScode
 *.vscode
