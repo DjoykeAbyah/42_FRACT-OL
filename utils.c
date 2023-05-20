@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/16 18:06:21 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 15:13:13 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/20 15:21:07 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init(t_fractol *fractol, char **argv)
 	fractol->j_y = 0.8;
 	if (!ft_strncmp(argv[1], "mandelbrot", 11))
 		fractol->fractol = 1;
-	if (!ft_strncmp(argv[1], "julia", 6))
+	else if (!ft_strncmp(argv[1], "julia", 6))
 		fractol->fractol = 2;
 	else
 	{
