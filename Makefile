@@ -6,13 +6,13 @@
 #    By: djoyke <djoyke@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
-#    Updated: 2023/05/20 16:49:20 by dreijans      ########   odam.nl          #
+#    Updated: 2023/05/20 17:14:21 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	= fractol
-LIBFT	= ./Libft/libft.a
+LIBFT	= ./LIBFT/libft.a
 MLX42	= ./MLX42/build/libmlx42.a
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra -Ofast -O3
@@ -38,14 +38,17 @@ OBJDIR	= obj
 
 all:	libmlx $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ) $(MLX42)
+submodules:
+	@git submodule update --init --recursive
+
+$(NAME): submodules $(LIBFT) $(OBJ) $(MLX42)
 		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX42) -o $(NAME) $(LIBS) $(HEADERS) 
 
 $(MLX42):
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4 
 
-$(LIBFT): 
-		@$(MAKE) -C ./libft
+$(LIBFT):
+		@$(MAKE) -C ./LIBFT
 
 $(OBJDIR)/%.o: %.c
 		@mkdir -p $(OBJDIR)
@@ -55,12 +58,12 @@ $(OBJDIR)/%.o:
 		$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
-		@$(MAKE) clean -C ./libft
+		@$(MAKE) clean -C ./LIBFT
 		@rm -rf $(OBJDIR)
 		@rm -rf $(LIBMLX)/build
 
 fclean: clean
-		@$(MAKE) fclean -C ./libft
+		@$(MAKE) fclean -C ./LIBFT
 		@rm -f $(NAME)
 
 re:		fclean all

@@ -6,14 +6,14 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:57:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 15:10:37 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/20 17:11:10 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "./Libft/libft.h"
+# include "./LIBFT/libft.h"
 # include <stdlib.h>
 # include <stdbool.h>
 # include <MLX42/MLX42.h>
