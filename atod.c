@@ -6,12 +6,48 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 18:53:37 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:24:56 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 14:52:14 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+// void	digit_checl(char **argv)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	j = 0;
+// 	while (argv[i])
+// 	{
+		
+// 	}
+// }
+
+//checks for multiple -'s and +'s
+void	ft_minus_plus_check(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 2;
+	j = 0;
+	while (argv[i])
+	{
+		if (argv[i][j] == '-' && argv[i][j + 1] == '-')
+		{
+			ft_putendl_fd("please input correct number", 1);
+			exit(EXIT_FAILURE);
+		}
+		if (argv[i][j] == '+' && argv[i][j + 1] == '+')
+		{
+			ft_putendl_fd("please input correct number", 1);
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+}
 
 // stringinput checken op digits
 //kan deze beter bij utils staan en static?
@@ -39,29 +75,6 @@ void	ft_string_check(char **argv)
 				}
 			}
 			j++;
-		}
-		i++;
-	}
-}
-
-void	ft_minus_plus_check(char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 2;
-	j = 0;
-	while (argv[i])
-	{
-		if (argv[i][j] == '-' && argv[i][j + 1] == '-')
-		{
-			ft_putendl_fd("please input correct number", 1);
-			exit(EXIT_FAILURE);
-		}
-		if (argv[i][j] == '+' && argv[i][j + 1] == '+')
-		{
-			ft_putendl_fd("please input correct number", 1);
-			exit(EXIT_FAILURE);
 		}
 		i++;
 	}

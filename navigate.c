@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/20 18:50:12 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:36:55 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 14:49:36 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_move(void *param)
 	}
 }
 
+//increasing or decreasing iterations
+//need to change this name
 void	ft_zoom(t_fractol *data)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_EQUAL))
@@ -44,6 +46,7 @@ void	ft_zoom(t_fractol *data)
 	}
 }
 
+//allows traveling in window
 void	ft_travel(t_fractol *data)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_UP))
@@ -75,6 +78,7 @@ void	ft_travel(t_fractol *data)
 //y > 0 is bigger
 //y < 0 is smaller
 //save pos of the mouse to use later
+//try zooming centre of current window
 void	ft_scroll(double x, double y, void *param)
 {
 	t_fractol	*data;
@@ -83,17 +87,17 @@ void	ft_scroll(double x, double y, void *param)
 	(void)x;
 	if (y > 0)
 	{
-		data->x[0] = data->x[0] * 0.5;
-		data->x[1] = data->x[1] * 0.5;
-		data->y[0] = data->y[0] * 0.5;
-		data->y[1] = data->y[1] * 0.5;
+		data->x[0] = data->x[0] * 0.95;
+		data->x[1] = data->x[1] * 0.95;
+		data->y[0] = data->y[0] * 0.95;
+		data->y[1] = data->y[1] * 0.95;
 	}
 	else if (y < 0)
 	{
-		data->x[0] = data->x[0] / 0.5;
-		data->x[1] = data->x[1] / 0.5;
-		data->y[0] = data->y[0] / 0.5;
-		data->y[1] = data->y[1] / 0.5;
+		data->x[0] = data->x[0] / 0.95;
+		data->x[1] = data->x[1] / 0.95;
+		data->y[0] = data->y[0] / 0.95;
+		data->y[1] = data->y[1] / 0.95;
 	}
 	choose(data);
 }
