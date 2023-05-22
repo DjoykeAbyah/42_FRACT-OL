@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:42:21 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 17:05:41 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 19:58:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	choose(&fractol);
 	mlx_loop_hook(fractol.mlx, ft_move, &fractol);
-	mlx_scroll_hook(fractol.mlx, ft_scroll, &fractol);
+	mlx_scroll_hook(fractol.mlx, ft_zoom, &fractol);
 	mlx_loop(fractol.mlx);
 	mlx_terminate(fractol.mlx);
 	return (EXIT_SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/16 18:06:21 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 17:15:07 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 17:19:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,32 +80,3 @@ void	ft_exit(char *s, int fd)
 	ft_putchar_fd('\n', fd);
 	exit(EXIT_FAILURE);
 }
-
-// void	ft_color(t_fractol *data)
-// {
-// 	if (mlx_is_key_down(data->mlx, MLX_KEY_R))
-// 	{
-// 		//color is changed in more R hues
-// 		printf("R\n");
-// 		choose(data);
-// 	}
-// 	if (mlx_is_key_down(data->mlx, MLX_KEY_B))
-// 	{
-// 		// color is changed in more B hues
-// 		printf("B\n");
-// 		choose(data);
-// 	}
-// 	if (mlx_is_key_down(data->mlx, MLX_KEY_G))
-// 	{
-// 		// color is changed in more G hues
-// 		printf("G\n");
-// 		choose(data);
-// 	}
-// 	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
-// 	{
-// 		// color is changed in more or less opacity
-// 		printf("A\n");
-// 		choose(data);
-// 	}
-// }
-

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:57:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 17:17:21 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 19:49:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <MLX42/MLX42.h>
-# include <stdio.h>
 
 // double				x[2]; [0]begin + [1]end x
 // double				y[2]; [0]begin + [1]end y
@@ -43,17 +42,15 @@ void			ft_move(void *param);
 double			ft_atod(const char *str);
 void			mandelbrot(t_fractol *data);
 void			julia(t_fractol *data);
-void			ft_scroll(double x, double y, void *param);
+void			ft_zoom(double x, double y, void *param);
 void			init(t_fractol *fractol, char **argv);
 void			choose(t_fractol *fractol);
 void			ft_mouse_pos(t_fractol *data);
 void			ft_travel(t_fractol *data);
-void			ft_zoom(t_fractol *data);
+void			ft_iter(t_fractol *data);
 void			check_input(int argc, char **argv, t_fractol *data);
 void			arg_julia(char **argv, t_fractol *data);
-void			ft_string_check(char **argv);
-void			ft_minus_plus_check(char **argv);
-// void			ft_color(t_fractol *data);
+void			ft_string_check(char *argv);
 void			ft_exit(char *s, int fd);
 
 #endif

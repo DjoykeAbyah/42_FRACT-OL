@@ -6,14 +6,13 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/20 18:50:12 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 14:49:36 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/05/22 19:57:43 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 //event triggered function
-//if statement alleen if key is pressed, checks every frame
 void	ft_move(void *param)
 {
 	t_fractol	*data;
@@ -22,7 +21,7 @@ void	ft_move(void *param)
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
 	ft_travel(data);
-	ft_zoom(data);
+	ft_iter(data);
 	if (mlx_is_mouse_down(data->mlx, MLX_MOUSE_BUTTON_RIGHT))
 	{
 		ft_mouse_pos(data);
@@ -31,8 +30,7 @@ void	ft_move(void *param)
 }
 
 //increasing or decreasing iterations
-//need to change this name
-void	ft_zoom(t_fractol *data)
+void	ft_iter(t_fractol *data)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_EQUAL))
 	{
@@ -75,11 +73,8 @@ void	ft_travel(t_fractol *data)
 	}
 }
 
-//y > 0 is bigger
-//y < 0 is smaller
-//save pos of the mouse to use later
-//try zooming centre of current window
-void	ft_scroll(double x, double y, void *param)
+//zooming centre of current window
+void	ft_zoom(double x, double y, void *param)
 {
 	t_fractol	*data;
 
@@ -102,8 +97,7 @@ void	ft_scroll(double x, double y, void *param)
 	choose(data);
 }
 
-//pixels veranderen naar cooordinaten
-//can use mouse pos func for zoom
+//pixels to coordinates
 void	ft_mouse_pos(t_fractol *data)
 {
 	int32_t	x;
