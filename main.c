@@ -6,17 +6,18 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:42:21 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 18:09:11 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/05/22 17:05:41 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//error handling?
 int	main(int argc, char **argv)
 {
 	t_fractol	fractol;
 
+	if (argc == 1)
+		ft_exit("try ./fractol mandelbrot or ./fractol julia nbr nbr", 1);
 	init(&fractol, argv);
 	check_input(argc, argv, &fractol);
 	fractol.mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);

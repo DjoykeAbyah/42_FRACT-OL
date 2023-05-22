@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:57:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:25:07 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 16:26:35 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_fractol
 	double				y[2];
 	int					max;
 	int					fractol;
-	double				j_x;
-	double				j_y;
+	double				j_x;// still nodig?
+	double				j_y;// same
 }							t_fractol;
 
 # define WIDTH 1000
@@ -53,6 +53,7 @@ void			check_input(int argc, char **argv, t_fractol *data);
 void			arg_julia(char **argv, t_fractol *data);
 void			ft_string_check(char **argv);
 void			ft_minus_plus_check(char **argv);
-void			ft_color(t_fractol *data);
+// void			ft_color(t_fractol *data);
+void			ft_exit(char *s, int fd);
 
 #endif

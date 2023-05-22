@@ -6,7 +6,7 @@
 #    By: djoyke <djoyke@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/20 15:38:33 by djoyke        #+#    #+#                  #
-#    Updated: 2023/05/22 14:44:31 by djoyke        ########   odam.nl          #
+#    Updated: 2023/05/22 17:07:49 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm $(INCL)
 SRC		= \
 		main.c \
 		navigate.c \
-		atod.c \
+		checks.c \
 		julia.c \
 		mandelbrot.c \
 		utils.c \

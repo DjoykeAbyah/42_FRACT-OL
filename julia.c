@@ -6,12 +6,13 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 14:16:58 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/20 19:35:01 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 17:05:24 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+//julia math
 static double	get_julia(double x, double y, t_fractol *data)
 {
 	double	xtemp;
@@ -28,6 +29,7 @@ static double	get_julia(double x, double y, t_fractol *data)
 	return (i);
 }
 
+//puts pixel on screen
 void	julia(t_fractol *data)
 {
 	double		x;
@@ -57,18 +59,13 @@ void	julia(t_fractol *data)
 	}
 }
 
+// converts input to double, checks if double between fractal range
 void	arg_julia(char **argv, t_fractol *data)
 {
 	data->j_x = ft_atod(argv[2]);
 	data->j_y = ft_atod(argv[3]);
 	if (data->j_x > 2 || data->j_x < -2)
-	{
-		ft_putendl_fd("please input number between -2 and 2", 1);
-		exit(EXIT_FAILURE);
-	}
+		ft_exit("please input number between -2 and 2", 1);
 	if (data->j_y > 2 || data->j_y < -2)
-	{
-		ft_putendl_fd("please input number between -2 and 2", 1);
-		exit(EXIT_FAILURE);
-	}
+		ft_exit("please input number between -2 and 2", 1);
 }
