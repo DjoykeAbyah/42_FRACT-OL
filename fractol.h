@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/01 15:57:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 16:26:35 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/22 17:17:21 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <MLX42/MLX42.h>
 # include <stdio.h>
 
-// double				x[2];// begin eind van fractol
-// double				y[2];// same
+// double				x[2]; [0]begin + [1]end x
+// double				y[2]; [0]begin + [1]end y
 typedef struct s_fractol
 {
 	mlx_t				*mlx;
@@ -29,8 +29,8 @@ typedef struct s_fractol
 	double				y[2];
 	int					max;
 	int					fractol;
-	double				j_x;// still nodig?
-	double				j_y;// same
+	double				j_x;
+	double				j_y;
 }							t_fractol;
 
 # define WIDTH 1000
