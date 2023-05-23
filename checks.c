@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 17:17:58 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 20:02:10 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/05/23 11:52:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,15 @@ void	ft_string_check(char *argv)
 	while (argv[i])
 	{
 		if (dot > 1)
-			ft_exit("input number 1", 1);
+			ft_exit("input number, error 1", 1);
 		if (sign > 1)
-			ft_exit("input number 2", 1);
+			ft_exit("input number, error 2", 1);
 		if (argv[i] == '.' && !ft_isdigit(argv[i + 1]))
-			ft_exit("input number 3", 1);
+			ft_exit("input number, error 3", 1);
 		if ((argv[i] == '-' || argv[i] == '+') && !ft_isdigit(argv[i + 1]))
-			ft_exit("intput number 4", 1);
+			ft_exit("intput number, error 4", 1);
 		if (!ft_sign_dot_num(argv))
-			ft_exit("input number 5", 1);
+			ft_exit("input number, error 5", 1);
 		i++;
 	}
 }
