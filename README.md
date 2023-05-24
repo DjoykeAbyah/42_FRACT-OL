@@ -36,6 +36,10 @@ or
 - you can adjust the number of iterations with the + and - keys (try it, it's fun!)
 - when you choose the julia set right click hold with your mouse and move around for some extra fractal magic!
 
+![gif1](https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/93064cba-edc9-4232-b097-57493514862d)
+
+![gif3](https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/8e0f67cc-ba69-47b2-9207-84af18184b1e)
+
 
 ## Features
 - Display the Julia set and the Mandelbrot set.
