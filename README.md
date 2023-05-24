@@ -33,7 +33,6 @@ or
 ```$ ./fractol julia nbr nbr ```
 
 - `nbr`: lets you play around with additional options for the Julia set..
-![video](https://im3.ezgif.com/tmp/ezgif-3-c5645b814a.gif)
 
 
 ## Features
