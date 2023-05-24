@@ -1,4 +1,6 @@
 # ❄️ FRACT'OL ❄️
+![video]()
+![image]()
 This project is about creating graphically beautiful fractals!
 
 This is a small fractal exploration program called "fract'ol". It allows you to display and interact with various types of fractals, including the Julia set and the Mandelbrot set. The program utilizes the MLX42 library for graphical rendering.
