@@ -8,6 +8,7 @@ This is a small fractal exploration program called "fract'ol". It allows you to 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Wishlist](#wishlist)
 
 ## Requirements
 - MLX42 library
@@ -46,5 +47,12 @@ or
 - Zoom in and out using the mouse wheel, allowing infinite zooming within the limits of the computer.
 - Create different Julia sets by passing different parameters to the program.
 - Support for additional parameters as rendering options.
+
+
+## Wishlist
+- Changing colors with a simple press on a key
+- Adding different fractals
+- Zoom on mouse position
+- Gradient flow between iterations
 
 ![image](https://im3.ezgif.com/tmp/ezgif-3-e8569e9688.png)
