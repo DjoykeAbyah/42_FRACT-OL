@@ -17,17 +17,20 @@ This is a small fractal exploration program called "fractol". It allows you to d
 
 ## Installation
 1. Clone the repository or download the source code files.
-2. Compile the program using the provided Makefile using the command:
+2. Compile the program using the provided Makefile by simply running:
 
 ```$ make```
 
 
 ## Usage
-Run the program with the following command:
+To embark on a fractal adventure, run the program with the following command:
 
-``` $ ./fractol mandelbrot or ./fractol julia nbr nbr ```
+``` $ ./fractol mandelbrot```
+or
 
-- `nbr`: Additional rendering options for the julia set.
+```$ ./fractol julia nbr nbr ```
+
+- `nbr`: lets you play around with additional options for the Julia set..
 
 ## Features
 - Display the Julia set and the Mandelbrot set.
