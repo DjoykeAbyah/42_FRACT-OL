@@ -20,9 +20,7 @@ This is a small fractal exploration program called "fractol". It allows you to d
 2. Compile the program using the provided Makefile:
 <pre>
 to compile the proggram use the following command:
-```shell
-make
-```
+```shell make```
 
 
 ## Usage
