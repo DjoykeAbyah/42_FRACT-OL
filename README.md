@@ -1,5 +1,5 @@
 # ❄️ FRACT'OL ❄️
-![image](https://im.ezgif.com/tmp/ezgif-1-280366a726.mov)
+![image](https://im3.ezgif.com/tmp/ezgif-3-c5645b814a.gif)
 ![image](https://im3.ezgif.com/tmp/ezgif-3-8859c06f30.png)
 This project is about creating graphically beautiful fractals!
 
