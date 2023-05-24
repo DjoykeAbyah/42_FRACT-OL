@@ -18,6 +18,7 @@ This is a small fractal exploration program called "fractol". It allows you to d
 ## Installation
 1. Clone the repository or download the source code files.
 2. Compile the program using the provided Makefile:
+``` bash make``
 
 
 ## Usage
