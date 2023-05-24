@@ -33,7 +33,8 @@ or
 ```$ ./fractol julia nbr nbr ```
 
 - `nbr`: lets you play around with additional options for the Julia set..
-![video](https://im3.ezgif.com/tmp/ezgif-3-c5645b814a.gif)
+![video](https://im3.ezgif.com/tmp/ezgif-3-c5645b814a.gif![image](https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/994c8fc7-5df4-4f60-8641-4e6472ededaf)
+)
 
 ## Features
 - Display the Julia set and the Mandelbrot set.
