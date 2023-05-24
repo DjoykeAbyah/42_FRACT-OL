@@ -26,6 +26,7 @@ This is a small fractal exploration program called "fract'ol". It allows you to 
 To embark on a fractal adventure, run the program with the following command:
 
 ``` $ ./fractol mandelbrot```
+
 or
 
 ```$ ./fractol julia nbr nbr ```
