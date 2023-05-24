@@ -40,3 +40,5 @@ or
 - Zoom in and out using the mouse wheel, allowing infinite zooming within the limits of the computer.
 - Create different Julia sets by passing different parameters to the program.
 - Support for additional parameters as rendering options.
+
+![image](https://im3.ezgif.com/tmp/ezgif-3-e8569e9688.png)
