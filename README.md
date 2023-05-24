@@ -25,7 +25,7 @@ This is a small fractal exploration program called "fractol". It allows you to d
 ## Usage
 Run the program with the following command:
 
-``` bash ./fractol mandelbrot or ./fractol julia nbr nbr ```
+``` $ ./fractol mandelbrot or ./fractol julia nbr nbr ```
 
 - `nbr`: Additional rendering options for the julia set.
 
