@@ -1,4 +1,4 @@
-# ❄️ FRACT'OL ❄️
+# ✨ FRACT'OL ✨
 ![image](https://im3.ezgif.com/tmp/ezgif-3-8859c06f30.png)
 This project is about creating graphically beautiful fractals!
 
