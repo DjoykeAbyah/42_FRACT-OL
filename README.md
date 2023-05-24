@@ -25,8 +25,7 @@ Run the program with the following command:
 
 ``` bash ./fractol mandelbrot or ./fractol julia nbr nbr ```
 
-- `fractal_type`: Specifies the type of fractal to be displayed.
-- `nbr`: Additional rendering options.
+- `nbr`: Additional rendering options for the julia set.
 
 If no parameters are provided or an invalid parameter is given, the program displays a list of available parameters and exits properly.
 
