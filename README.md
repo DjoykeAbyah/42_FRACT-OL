@@ -4,7 +4,8 @@ This project is about creating graphically beautiful fractals!
 
 This is a small fractal exploration program called "fract'ol". It allows you to display and interact with various types of fractals, including the Julia set and the Mandelbrot set. The program utilizes the MLX42 library for graphical rendering.
 
-## Table of Contents
+## Table of Contents![Schermopname_2023-05-23_om_23_17_39_AdobeExpress (1)](https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/eec6e449-8b95-4dc8-99d3-fadc9300cb38)
+
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
