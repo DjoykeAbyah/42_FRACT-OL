@@ -22,7 +22,7 @@ This is a small fractal exploration program called "fractol". It allows you to d
 
 ## Usage
 Run the program with the following command:
-./fractol mandelbrot or ./fractol julia nbr nbr
+``` bash ./fractol mandelbrot or ./fractol julia nbr nbr
 
 - `fractal_type`: Specifies the type of fractal to be displayed.
 - `nbr`: Additional rendering options.
