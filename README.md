@@ -29,8 +29,6 @@ Run the program with the following command:
 
 - `nbr`: Additional rendering options for the julia set.
 
-If no parameters are provided or an invalid parameter is given, the program displays a list of available parameters and exits properly.
-
 ## Features
 - Display the Julia set and the Mandelbrot set.
 - Zoom in and out using the mouse wheel, allowing infinite zooming within the limits of the computer.
