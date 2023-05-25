@@ -1,5 +1,7 @@
 # ✨ FRACT'OL ✨
-![image](https://im3.ezgif.com/tmp/ezgif-3-8859c06f30.png)
+
+<img width="993" alt="yes 1" src="https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/831d13fb-3296-47a2-a5a0-9ad544779bc4">
+
 This project is about creating graphically beautiful fractals!
 
 This is a small fractal exploration program called "fract'ol". It allows you to display and interact with various types of fractals, including the Julia set and the Mandelbrot set. The program utilizes the MLX42 library for graphical rendering.
@@ -55,4 +57,5 @@ or
 - Zoom on mouse position
 - Gradient flow between iterations
 
-![image](https://im3.ezgif.com/tmp/ezgif-3-e8569e9688.png)
+<img width="994" alt="yes 2" src="https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/d75a881e-a900-414d-b41b-e9b251cd607f">
+
