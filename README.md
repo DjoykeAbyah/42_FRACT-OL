@@ -58,6 +58,7 @@ or
 - Adding different fractals
 - Zoom on mouse position
 - Gradient flow between iterations
+- stabilizing framerate with mlx
 
 <img width="994" alt="yes 2" src="https://github.com/DjoykeAbyah/FRACT-OL/assets/115019123/d75a881e-a900-414d-b41b-e9b251cd607f">
 
