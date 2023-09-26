@@ -6,13 +6,20 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 14:16:58 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 17:05:24 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/09/26 18:21:04 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//julia math
+/**
+ * @param x double containing x coordinate
+ * @param y double containinf y coordinate
+ * @param max integer holding limit of iterations
+ * @brief code version of the mathematical formula to make a julia fractal
+ * @return int i representing the amount of iterations this formula has done 
+ * for the statement to be no longer true
+*/
 static double	get_julia(double x, double y, t_fractol *data)
 {
 	double	xtemp;
@@ -29,7 +36,14 @@ static double	get_julia(double x, double y, t_fractol *data)
 	return (i);
 }
 
-//puts pixel on screen
+/**
+ * @param data struct containing data needed to make a fractal
+ * @brief checks position of coordinates with the window size to put a pixel on that position.
+ * using the julia formula to create an infinite amount of the image created while zooming.
+ * while the iterations determine the color by multiplying them with with each iteration.
+ * pos[X] = -2 + (x / WIDTH) * (2 - -2)
+ * pos[Y] = 2 + (y / HEIGHT) * (-2 - 2)
+*/
 void	julia(t_fractol *data)
 {
 	double		x;
@@ -59,7 +73,13 @@ void	julia(t_fractol *data)
 	}
 }
 
-// converts input to double, checks if double between fractal range
+/**
+ * @param argv 2D array containing command line arguments
+ * @param data struct containing data needed to make a fractal
+ * @brief adds arguments containing julia coodinates to the data struct
+ * and checks if those arguments are within the boundaries of a fractal
+ * if not it returns a custom error message and exits the program
+*/
 void	arg_julia(char **argv, t_fractol *data)
 {
 	data->j_x = ft_atod(argv[2]);

@@ -6,13 +6,17 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 17:17:58 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/23 11:52:44 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/09/26 17:52:28 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//checks if strings contain only digits
+/**
+ * @param argv string representing a number
+ * @brief checks the string for the ampount of '.''s
+ * @return int representing amount of the char above found
+*/
 int	ft_is_dot(char *argv)
 {
 	int	i;
@@ -29,7 +33,11 @@ int	ft_is_dot(char *argv)
 	return (x);
 }
 
-//checks for multiple -'s and +'s
+/**
+ * @param argv string representing a number
+ * @brief checks the string for the ampount of '-' and '+'
+ * @return int representing amount of the char above found
+*/
 int	ft_sign(char *argv)
 {
 	int	i;
@@ -46,6 +54,13 @@ int	ft_sign(char *argv)
 	return (x);
 }
 
+/**
+ * @param argv string representing a number
+ * @brief checks the string if the content is a '.', '-', '+'
+ * or char representation of a number.
+ * @return 1 when the string contains only these character
+ * 0 when the string contains other characters than the above mentioned
+*/
 int	ft_sign_dot_num(char *argv)
 {
 	int	i;
@@ -65,7 +80,11 @@ int	ft_sign_dot_num(char *argv)
 	return (1);
 }
 
-// stringinput checken op digits
+/**
+ * @param argv string to be checked for digits
+ * @brief checks string for digits, gives custom error message
+ * if the string does not represent a digit which can be converted
+*/
 void	ft_string_check(char *argv)
 {
 	int	i;
@@ -91,7 +110,15 @@ void	ft_string_check(char *argv)
 	}
 }
 
-//checks if argc is correct amount for mandelbrot, julia
+/**
+ * @param argc int representing argument count
+ * @param argv 2D array containing arguments given in the terminal
+ * @param data struct containing data needed for a fractal
+ * @brief checks if the argument count is enough for a mandelbrot or
+ * julia fractal. Gives custon error message when argc is wrong.
+ * when argc is 2: function does nothing means there is mandelbrot
+ * when argc is 4: enters string_check function and then arg_julia function
+*/
 void	check_input(int argc, char **argv, t_fractol *data)
 {
 	if (argc != 2 && argc != 4)

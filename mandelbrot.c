@@ -6,12 +6,20 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 14:23:44 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/17 12:07:44 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/09/26 18:00:21 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/**
+ * @param x double containing x coordinate
+ * @param y double containinf y coordinate
+ * @param max integer holding limit of iterations
+ * @brief code version of the mathematical formula to make a mandelbrot fractal
+ * @return int i representing the amount of iterations this formula has done 
+ * for the statement to be no longer true
+*/
 static double	get_mandelbrot(double x, double y, int max)
 {
 	double	x0;
@@ -32,8 +40,15 @@ static double	get_mandelbrot(double x, double y, int max)
 	return (i);
 }
 
-//pos[X] = -2 + (x / WIDTH) * (2 - -2);
-//pos[Y] = 2 + (y / HEIGHT) * (-2 - 2);
+
+/**
+ * @param data struct containing data needed to make a fractal
+ * @brief checks position of coordinates with the window size to put a pixel on that position.
+ * using the mandelbrot formula to create an infinite amount of the image created while zooming.
+ * while the iterations determine the color by multiplying them with with each iteration.
+ * pos[X] = -2 + (x / WIDTH) * (2 - -2)
+ * pos[Y] = 2 + (y / HEIGHT) * (-2 - 2)
+*/
 void	mandelbrot(t_fractol *data)
 {
 	double		x;

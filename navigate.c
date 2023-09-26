@@ -6,13 +6,18 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/20 18:50:12 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/05/22 19:57:43 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/09/26 18:31:42 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//event triggered function
+/**
+ * @param param void to be replaced with t_fractol struct
+ * @brief event triggered function.
+ * checks with MLX42 functions and mlx struct how we're navigating through the image
+ * and if a certain key is pressed executes the correct action.
+*/
 void	ft_move(void *param)
 {
 	t_fractol	*data;
@@ -29,7 +34,12 @@ void	ft_move(void *param)
 	}
 }
 
-//increasing or decreasing iterations
+/**
+ * @param data t_fractol struct
+ * @brief event triggered function.
+ * checks with MLX42 functions and mlx struct if the pressed key
+ * triggers an iteration increase or decrease.
+*/
 void	ft_iter(t_fractol *data)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_EQUAL))
@@ -44,7 +54,12 @@ void	ft_iter(t_fractol *data)
 	}
 }
 
-//allows traveling in window
+/**
+ * @param data t_fractol struct
+ * @brief event triggered function.
+ * checks with MLX42 functions and mlx struct how we're navigating through the image
+ * and calculates how big the movements need to be.
+*/
 void	ft_travel(t_fractol *data)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_UP))
@@ -73,7 +88,12 @@ void	ft_travel(t_fractol *data)
 	}
 }
 
-//zooming centre of current window
+/**
+ * @param x double for x axis
+ * @param y double for y axis
+ * @param param void to be replaced with t_fractol struct
+ * @brief event triggered function. that zooms from the centre of the image
+*/
 void	ft_zoom(double x, double y, void *param)
 {
 	t_fractol	*data;
@@ -97,7 +117,13 @@ void	ft_zoom(double x, double y, void *param)
 	choose(data);
 }
 
-//pixels to coordinates
+/**
+ * @param data t_fractol struct
+ * @brief event triggered function.
+ * checks with MLX42 functions and mlx struct how the julia fractol needs to change
+ * by taking the x and y axis to recalculate the coordinates that need to be given to
+ * the julia making function.
+*/
 void	ft_mouse_pos(t_fractol *data)
 {
 	int32_t	x;
